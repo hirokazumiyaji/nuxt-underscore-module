@@ -35,20 +35,3 @@ jobs:
         run: yarn test
       - name: Coverage
         uses: codecov/codecov-action@v1
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: '@hirokazumiyaji'
-      - name: checkout
-        uses: actions/checkout@master
-      - name: Install dependencies
-        name: yarn
-      - name: publish
-        run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    needs: ci
