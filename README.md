@@ -15,7 +15,7 @@
 1. Add `nuxt-underscore-module` dependency to your project
 
 ```bash
-yarn add nuxt-underscore-module # or npm install nuxt-underscore-module
+yarn add @hirokazumiyaji/nuxt-underscore-module # or npm install @hirokazumiyaji/nuxt-underscore-module
 ```
 
 2. Add `nuxt-underscore-module` to the `modules` section of `nuxt.config.js`
@@ -24,10 +24,10 @@ yarn add nuxt-underscore-module # or npm install nuxt-underscore-module
 {
   modules: [
     // Simple usage
-    'nuxt-underscore-module',
+    '@hirokazumiyaji/nuxt-underscore-module',
 
     // With options
-    ['nuxt-underscore-module', { /* module options */ }]
+    ['@hirokazumiyaji/nuxt-underscore-module', { /* module options */ }]
   ]
 }
 ```
