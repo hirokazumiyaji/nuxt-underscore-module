@@ -15,8 +15,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@hirokazumiyaji'
       - name: checkout
-        uses: actions/checkout@master
-      - name: Install dependencies
+        uses: actions/checkout@v2
+      - name: install dependencies
         run: yarn
       - name: publish
         run: yarn publish
