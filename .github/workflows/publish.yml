@@ -25,6 +25,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: publish npm registry
         run: yarn publish --access public
+        if: always()
         env:
           YARN_REGISTRY: https://registry.npmjs.org/
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
