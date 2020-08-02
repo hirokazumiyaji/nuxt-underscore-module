@@ -7,7 +7,7 @@ on:
       - v*
 
 jobs:
-  publish:
+  github-package-registry-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v1
@@ -19,13 +19,22 @@ jobs:
         uses: actions/checkout@v2
       - name: install dependencies
         run: yarn
-      - name: publish github package registry
+      - name: publish
         run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: publish npm registry
+  npm-package-registry-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install dependencies
+        run: yarn
+      - name: publish
         run: yarn publish --access public
-        if: always()
         env:
-          YARN_REGISTRY: https://registry.npmjs.org/
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
