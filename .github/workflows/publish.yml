@@ -1,10 +1,8 @@
 name: publish
 
 on:
+  workflow_dispatch:
   push:
-    tags:
-      - v*
-　workflow_dispatch:
     tags:
       - v*
 
